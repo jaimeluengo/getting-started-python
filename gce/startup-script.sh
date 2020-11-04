@@ -23,7 +23,7 @@ sudo bash install-logging-agent.sh
 # Install or update needed software
 apt-get update
 apt-get install -yq git supervisor python python-pip
-pip install --upgrade pip virtualenv
+pip install --upgrade pip virtualenv Flask
 
 # Account to own server process
 useradd -m -d /home/pythonapp pythonapp
