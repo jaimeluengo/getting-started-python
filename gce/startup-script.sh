@@ -30,7 +30,7 @@ useradd -m -d /home/pythonapp pythonapp
 
 # Fetch source code
 export HOME=/root
-git clone https://github.com/jaimeluengo/getting-started-python /opt/app
+git clone https://github.com/jaimeluengo/copy-gce-getting-started-python /opt/app
 
 # Python environment setup
 virtualenv -p python3 /opt/app/gce/env
