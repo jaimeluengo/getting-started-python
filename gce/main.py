@@ -13,12 +13,19 @@
 # limitations under the License.
 
 from flask import Flask
+import time
 app = Flask(__name__)
 
 
-@app.route('/', methods=['GET'])
-def say_hello():
-    return "Hello, world!"
+@app.route('/3mins', methods=['GET'])
+def three_minute_handler():
+    time.sleep(60*3)
+    return "After waiting 3 mins it still worked!"
+
+@app.route('/4mins', methods=['GET'])
+def four_minute_handler():
+    time.sleep(60*4)
+    return "After waiting 4 mins it still worked"
 
 
 if __name__ == '__main__':
