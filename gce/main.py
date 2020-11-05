@@ -13,34 +13,35 @@
 # limitations under the License.
 
 from flask import Flask
+import logging
 import time
 app = Flask(__name__)
 
 
 @app.route('/', methods=['GET'])
 def hello_world_handler():
-    print('Received call to hello_world_handler.')
+    logging.error('Received call to hello_world_handler.')
     return 'Hello world!'
 
 @app.route('/1mins', methods=['GET'])
 def one_minute_handler():
-    print('Received call for 1 minute time request.')
+    logging.error('Received call for 1 minute time request.')
     time.sleep(60*1)
-    print('Waited successfully 1 minute.')
+    logging.error('Waited successfully 1 minute.')
     return "After waiting 1 mins it still worked!"
 
 @app.route('/3mins', methods=['GET'])
 def three_minute_handler():
-    print('Received call for 3 minute time request.')
+    logging.error('Received call for 3 minute time request.')
     time.sleep(60*3)
-    print('Waited successfully 3 minute.')
+    logging.error('Waited successfully 3 minute.')
     return "After waiting 3 mins it still worked!"
 
 @app.route('/4mins', methods=['GET'])
 def four_minute_handler():
-    print('Received call for 4 minute time request.')
+    logging.error('Received call for 4 minute time request.')
     time.sleep(60*4)
-    print('Waited successfully 4 minute.')
+    logging.error('Waited successfully 4 minute.')
     return "After waiting 4 mins it still worked"
 
 
