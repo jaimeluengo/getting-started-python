@@ -25,10 +25,10 @@ def hello_world_handler():
 
 @app.route('/<int:num_minutes>', methods=['GET'])
 def one_minute_handler(num_minutes):
-    logging.info('Received call for '+num_minutes+' min time request.')
+    logging.info('Received call for '+str(num_minutes)+' min time request.')
     time.sleep(60*num_minutes)
-    logging.info('Waited successfully '+num_minutes+' mins.')
-    return 'After waiting '+num_minutes+' mins it still worked!'
+    logging.info('Waited successfully '+str(num_minutes)+' mins.')
+    return 'After waiting '+str(num_minutes)+' mins it still worked!'
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)
